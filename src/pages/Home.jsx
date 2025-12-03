@@ -288,6 +288,17 @@ function Home() {
               Read Market Guide →
             </Link>
           </div>
+
+          <div className="feature-card">
+            <h3>⚖️ Fair Price</h3>
+            <p>
+              Historical perspectives on fair pricing, speculation, and the moral obligations of 
+              merchants in times of crisis.
+            </p>
+            <Link to="/justprice" className="feature-link">
+              Explore History →
+            </Link>
+          </div>
         </div>
 
         <div className="market-indicators">

@@ -36,6 +36,14 @@ function Navigation() {
               Grain Trade
             </Link>
           </li>
+          <li>
+            <Link 
+              to="/justprice" 
+              className={location.pathname === '/justprice' ? 'nav-link active' : 'nav-link'}
+            >
+              Just Price
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
