@@ -3,7 +3,7 @@ import { Scale, Info, BookOpen } from 'lucide-react';
 // Importing the specific CSS file as requested
 import './GrainArticle.css';
 
-// Importing images from the correct relative path (src/pages -> src/Images)
+// Importing images from the correct relative path
 import lysiasImg from '../Images/Lycias.jpg';
 import aristotleImg from '../Images/Aristotle.jpg';
 import apuleiusImg from '../Images/Apuleuis.jpg';
@@ -12,6 +12,10 @@ const sources = [
   {
     id: 0,
     author: "Lysias",
+    // Added specific date
+    date: "386 BC",
+    // Added explicit attribution field to handle the "not Aristotle" request
+    attribution: "Lysias",
     title: "Against Grain Dealers",
     image: lysiasImg,
     content: (
@@ -33,6 +37,9 @@ const sources = [
   {
     id: 1,
     author: "Aristotle",
+    date: "328 BC–322 BC",
+    // Changed attribution as requested
+    attribution: "not Aristotle",
     title: "Athenian Constitution",
     image: aristotleImg,
     content: (
@@ -52,6 +59,8 @@ const sources = [
   {
     id: 2,
     author: "Apuleius",
+    date: "150 AD–180 AD",
+    attribution: "Apuleius",
     title: "The Metamorphoses",
     image: apuleiusImg,
     content: (
@@ -82,7 +91,6 @@ function JustPrice() {
 
   return (
     <div className="grain-article-page">
-      {/* Integrating specific CSS for Tabs, Animation, and Layout Adjustments */}
       <style>{`
         /* Custom Scrollbar to match theme */
         ::-webkit-scrollbar {
@@ -108,7 +116,7 @@ function JustPrice() {
           to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Custom Tab System styling to match GrainArticle theme */
+        /* Custom Tab System styling */
         .tab-grid {
           display: flex;
           gap: 15px;
@@ -196,6 +204,17 @@ function JustPrice() {
             object-fit: cover;
         }
 
+        .source-date {
+            font-size: 0.6em;
+            color: #8B4513;
+            background: rgba(210, 180, 140, 0.3);
+            padding: 4px 8px;
+            border-radius: 4px;
+            vertical-align: middle;
+            margin-left: 10px;
+            font-weight: normal;
+        }
+
         @media (max-width: 768px) {
             .tab-grid {
                 flex-direction: column;
@@ -205,18 +224,16 @@ function JustPrice() {
 
       <div className="article-container">
         
-        {/* Header using GrainArticle classes */}
+        {/* Header - Text removed as requested */}
         <header className="article-header">
           <h1>Fair Price: Historical Perspectives</h1>
           <div className="article-meta" style={{ display: 'flex', justifyContent: 'center', gap: '10px', alignItems: 'center' }}>
             <Scale size={18} />
-            <span>Economic History Archive</span>
           </div>
         </header>
 
         <div className="article-content">
           
-          {/* Intro Section - using article-intro class */}
           <section className="article-intro">
             <h2 style={{ color: '#654321', fontSize: '1.4em', marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '10px' }}>
               <Info size={20} color="#8B4513" />
@@ -237,7 +254,6 @@ function JustPrice() {
           {/* Interactive Source Switcher */}
           <section id="sources-app">
             
-            {/* Tab Navigation */}
             <div className="tab-grid">
               {sources.map((source, index) => (
                 <button 
@@ -254,16 +270,18 @@ function JustPrice() {
               ))}
             </div>
 
-            {/* Content Display Panel - Reusing scam-section for the card look */}
             <div className="scam-section" style={{ background: 'rgba(244, 232, 208, 0.6)', minHeight: '400px' }}>
               <div key={activeTab} className="fade-in">
                 
                 <div className="active-source-header">
                   <img src={activeData.image} alt={activeData.author} />
                   <div>
-                    <h2 style={{ margin: 0, fontSize: '1.8em', color: '#654321' }}>{activeData.title}</h2>
+                    <h2 style={{ margin: 0, fontSize: '1.8em', color: '#654321' }}>
+                        {activeData.title} 
+                        <span className="source-date">{activeData.date}</span>
+                    </h2>
                     <p style={{ margin: '5px 0 0 0', color: '#8B4513', fontStyle: 'italic' }}>
-                      By {activeData.author}
+                      By: {activeData.attribution}
                     </p>
                   </div>
                 </div>
@@ -279,9 +297,7 @@ function JustPrice() {
           </section>
         </div>
         
-        <div className="article-footer" style={{ textAlign: 'center' }}>
-          &copy; 2023 Historical Economic Archives. Educational Reference.
-        </div>
+
       </div>
     </div>
   )
