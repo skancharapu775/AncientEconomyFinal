@@ -226,7 +226,7 @@ function JustPrice() {
         
         {/* Header - Text removed as requested */}
         <header className="article-header">
-          <h1>Fair Price: Historical Perspectives</h1>
+          <h1>Just Price: Historical Perspectives</h1>
           <div className="article-meta" style={{ display: 'flex', justifyContent: 'center', gap: '10px', alignItems: 'center' }}>
             <Scale size={18} />
           </div>

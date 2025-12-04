@@ -474,7 +474,7 @@ function Home() {
        data: processData(egyptianWheatData),
        color: "#dc2626",
        unit: "Drachmas / Artaba (29 kg)",
-       description: "Enter your text for Egyptian Wheat here. Egypt was the breadbasket of the ancient Mediterranean."
+       description: "Egypt was the breadbasket of the ancient Mediterranean."
      }
 
      const babylonianBarley = {
@@ -543,8 +543,7 @@ function Home() {
     const previous = getPreviousPrice(commodity.data)
     const change = getPriceChange(commodity.data)
     const isPositive = change >= 0
-    const percentChange = ((change / previous.price) * 100).toFixed(1)
-
+    const percentChange = ((change / (previous.price !== undefined ? previous.price : (previous.lowest + previous.secondLowest + previous.secondHighest + previous.highest) / 4)) * 100).toFixed(1)
     // For Babylonian data, calculate average for latest price display
     let displayLatest = latest
     if (commodity.isBabylonian && showAllBabylonianPrices) {
@@ -965,7 +964,7 @@ function Home() {
           <div className="indicators-grid">
             <div className="indicator">
               <span className="indicator-label">Active Commodities</span>
-              <span className="indicator-value">5</span>
+              <span className="indicator-value">6</span>
             </div>
             <div className="indicator">
               <span className="indicator-label">Price Range (Wheat)</span>

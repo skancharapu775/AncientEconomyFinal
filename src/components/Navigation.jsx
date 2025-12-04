@@ -219,6 +219,14 @@ function Navigation() {
               </div>
             )}
           </li>
+          <li>
+            <Link 
+              to="/sources" 
+              className={location.pathname === '/sources' ? 'nav-link active' : 'nav-link'}
+            >
+              Sources
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

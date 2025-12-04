@@ -12,6 +12,7 @@ import Games from './pages/Games'
 import Wordle from './games/Wordle'
 import Crossword from './games/Crossword'
 import Measurments from  './pages/Measurements'
+import Sources from './pages/Sources'
 import './App.css'
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="/wordle" element={<Wordle />} />
           <Route path="/crossword" element={<Crossword />} />
           <Route path="/measurements" element={<Measurments />} />
+          <Route path="/sources" element={<Sources />} />
           
         </Routes>
       </div>
