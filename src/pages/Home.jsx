@@ -468,14 +468,14 @@ function Home() {
       description: "Note that these are piglet prices; piglets were not consumed, but instead sacrificed. The first two prices are from an Athenian sacrficial calendar, the rest are from Delos."
     }
 
-     const egyptianWheat = {
-       name: "Egyptian Wheat",
-       symbol: "EGWHT-ARC",
-       data: processData(egyptianWheatData),
-       color: "#dc2626",
-       unit: "Drachmas / Artaba (29 kg)",
-       description: "Price data from Egyptian papyri: one price from Thebes, two from Alexandria, and the rest from Fayum."
-     }
+      const egyptianWheat = {
+        name: "Egyptian Wheat",
+        symbol: "EGWHT-ARC",
+        data: processData(egyptianWheatData),
+        color: "#dc2626",
+        unit: "Drachmas / Artaba (29 kg)",
+        description: "Price data from Egyptian papyri: one price from Thebes, two from Alexandria, and the rest from Fayum."
+      }
 
      const babylonianBarley = {
        name: "Barley (Babylon)",
@@ -543,7 +543,8 @@ function Home() {
     const previous = getPreviousPrice(commodity.data)
     const change = getPriceChange(commodity.data)
     const isPositive = change >= 0
-    const percentChange = ((change / (previous.price !== undefined ? previous.price : (previous.lowest + previous.secondLowest + previous.secondHighest + previous.highest) / 4)) * 100).toFixed(1)
+    const percentChange = ((change / previous.price) * 100).toFixed(1)
+
     // For Babylonian data, calculate average for latest price display
     let displayLatest = latest
     if (commodity.isBabylonian && showAllBabylonianPrices) {
@@ -964,7 +965,7 @@ function Home() {
           <div className="indicators-grid">
             <div className="indicator">
               <span className="indicator-label">Active Commodities</span>
-              <span className="indicator-value">6</span>
+              <span className="indicator-value">5</span>
             </div>
             <div className="indicator">
               <span className="indicator-label">Price Range (Wheat)</span>
