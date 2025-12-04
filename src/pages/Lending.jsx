@@ -63,7 +63,7 @@ function Lending() {
             you can of course visit a bank.
           </p>
           <p style={{ marginBottom: '20px' }}>
-            However, for interest-free loans, consult <em style={{ color: '#8B7355', fontWeight: 'bold' }}>Eranos</em>. 
+            However, for interest-free loans, consult your family and friends(<em style={{ color: '#8B7355', fontWeight: 'bold' }}>Eranos</em>). 
             Make sure to pay it back though, because otherwise the courts may hold you liable for interest.
           </p>
           <p>

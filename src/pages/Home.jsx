@@ -474,7 +474,7 @@ function Home() {
        data: processData(egyptianWheatData),
        color: "#dc2626",
        unit: "Drachmas / Artaba (29 kg)",
-       description: "Egypt was the breadbasket of the ancient Mediterranean."
+       description: "Price data from Egyptian papyri: one price from Thebes, two from Alexandria, and the rest from Fayum."
      }
 
      const babylonianBarley = {
@@ -742,7 +742,7 @@ function Home() {
             >
               <div style={{ fontSize: '24px' }}>⚠️</div>
               <div>
-                <strong>Caveat Emptor!</strong> Watch out! Don't get too invested in predicting these prices. 
+                <strong>Caveat Athenian!</strong> Watch out! Don't get too invested in predicting these prices. 
                 Remember that all these commodities have a <u>Just Price</u>!
               </div>
             </div>
@@ -787,7 +787,7 @@ function Home() {
                 <div>
                   <h4 style={{ margin: '0 0 10px 0', fontSize: '1.5rem', color: '#5A4A35' }}>Delos</h4>
                   <p style={{ margin: 0, maxWidth: '600px', lineHeight: '1.5', color: '#4a4a4a' }}>
-                    Delos is a small island which bore significance in the Hellenstic world due to its religious significance; the Gods Appolo and Artemis were both said to be born at Delos. As such, there was a sanctuary on the island, and from 314 BC to 167 BC the keepers of the sanctuary kept extensive records. These records are one of the few economic time series which we have from the Hellenistic era, and are hence the subject of extensive economic analysis.
+                    Delos is a small island which was important in the Hellenstic world due to its religious significance; the Gods Appolo and Artemis were both said to be born at Delos. As such, there was a sanctuary on the island, and from 314 BC to 167 BC the keepers of the sanctuary kept extensive records. These records are one of the few economic time series which we have from the Hellenistic era, and are hence the subject of extensive economic analysis.
                   </p>
                 </div>
               </div>
